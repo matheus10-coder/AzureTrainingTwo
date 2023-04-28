@@ -14,4 +14,4 @@ jobs:
           azcliversion: latest
           inlineScript: |
             echo "Create an Azure Container Instance"
-            az container create -g ${{vars.RG_NAME}} --name mribcontainerinstance --image learnacr402mr.azurecr.io/nginx:mycopy --registry-password ${{secrets.ACR_PWD}} --registry-username learnacr402mr --ip-address public --dns-name-label learnacr402mr
+            az container create -g ${{vars.RG_NAME}} --name mycontainerinstance --image learnacr402mr.azurecr.io/nginx:mycopy --registry-password ${{secrets.ACR_PWD}} --registry-username learnacr402mr --ip-address public --dns-name-label learnacr402mr
