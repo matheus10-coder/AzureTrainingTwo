@@ -13,7 +13,7 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-        creds: '${{ secrets.AZURE_CREDENTIALS }}'
+          creds: '${{ secrets.AZURE_CREDENTIALS }}'
 
       - name: Access Secret from Key Vault
         uses: azure/CLI@v1
@@ -21,5 +21,4 @@ jobs:
           azcliversion: latest
           inlineScript: |
             echo "Let's find the secret"
-            az keyvault secret show --vault-name ${{ env.kvname }} -n ${{ env.secretname }} --query
-value
+            az keyvault secret show --vault-name ${{ env.kvname }} -n ${{ env.secretname }} --query value
